@@ -1,16 +1,30 @@
-
-
+import { useSelector } from 'react-redux';
 import './App.css'
+import image from './assets/hero.png'
+import { heroapi, popularsales, toprateslaes, highlight, sneaker, story, footerAPI } from './data/data.js';
+import {selectTotalAmount} from './store/CartSlice'
 
 function App() {
-
+  const TotalAmount = useSelector(selectTotalAmount)
 
   return (
     <>
      <div>
         <h1 className=" text-3xl font-bold underline">
-          Hello world!
+          hola
         </h1>
+        <div>
+          {TotalAmount}
+        </div>
+        <div>
+          {
+            story.news.map(({img}, index) =>(
+              <div key={index}>
+                  <img src={img} alt="" />
+              </div>
+            ))
+          }
+        </div>
      </div>
     </>
   )
