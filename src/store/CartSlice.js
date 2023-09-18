@@ -13,19 +13,27 @@ const CartSlice = createSlice({
     reducers:{
         sayHello: (state, action) =>{
             console.log("helloworld")
+        },
+        plusOne: (state, action) =>{
+          state.cartTotalQantity  =  state.cartTotalQantity + 1
+        },
+        setOpenCart: (state, action) =>{
+          state.cartState = action.payload.cartState
         }
     }
 })
 
 export const {
-    sayHello
+    sayHello,
+    plusOne,
+    setOpenCart
 } = CartSlice.actions;
 
 export const selectCartState = (state) => state.cart.cartState;
 export const selectCartItems = (state) => state.cart.cartItems;
 
 export const selectTotalAmount = (state) => state.cart.cartTotalAmount;
-export const selectTotalQTY = (state) => state.cart.cartTotalQantity;
+export const selectTotalQantity = (state) => state.cart.cartTotalQantity;
 
 export default CartSlice.reducer;
 
