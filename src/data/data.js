@@ -3,7 +3,6 @@ import heroimg from "../assets/hero.png";
 import hightlightimg from "../assets/hightlightimg.png";
 import sneakershoe from "../assets/sneaker.png";
 
-import clip from "../assets/video/clip.mp4";
 import vcover1 from "../assets/video/vcover1.png";
 import vcover2 from "../assets/video/vcover2.png";
 import vcover3 from "../assets/video/vcover3.png";
@@ -24,23 +23,23 @@ import product9 from "../assets/product9.png";
 import product10 from "../assets/product10.png";
 import product11 from "../assets/product11.png";
 import product12 from "../assets/product12.png";
+ 
 
+import facebook from "../assets/facebook.png";
+import instagram from "../assets/instagram.png";
+import twitter from "../assets/x.png";
+import youtube from "../assets/youtube.png";
+import messenger from "../assets/messenger.png";
 
-import facebook from "../assets/facebook.svg";
-import instagram from "../assets/instagram.svg";
-import twitter from "../assets/twitter.svg";
-import youtube from "../assets/youtube.svg";
-import messenger from "../assets/messenger.svg";
-
-const heroapi = {
+export const heroapi = {
   title: "Play With Electric Nike",
   subtitle: "Adapt 2.0 Sneakers",
   img: heroimg,
   btntext: "Explore Product",
   videos: [
-    { imgsrc: vcover1, clip: clip },
-    { imgsrc: vcover2, clip: clip },
-    { imgsrc: vcover3, clip: clip },
+    { imgsrc: vcover1, id: 1},
+    { imgsrc: vcover2, id: 2},
+    { imgsrc: vcover3, id: 3},
   ],
   sociallinks: [
     { icon: facebook },
@@ -51,7 +50,7 @@ const heroapi = {
   ],
 };
 
-const popularsales = {
+export const popularsales = {
   title: "Popular Sales",
   items: [
     {
@@ -90,7 +89,7 @@ const popularsales = {
   ],
 };
 
-const highlight = {
+export const highlight = {
   heading: "HIGHLIGHTS",
   title: "NIKE AIR WITH LIMITLESS CHOICES",
   text: "Our Purpose is to move the world forward. We take action by building community, protecting our planet and increasing access to sport.",
@@ -99,7 +98,7 @@ const highlight = {
   img: hightlightimg,
 };
 
-const sneaker = {
+export const sneaker = {
   heading: "FEATURED",
   title: "NIKE SNEAKERS AIR LANCING SHOES",
   text: "The radiance lives on Nike Sneakers Air Lancing Shoes, the basket ball OG that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
@@ -108,7 +107,7 @@ const sneaker = {
   img: sneakershoe,
 };
 
-const toprateslaes = {
+export const toprateslaes = {
   title: "Top Rated Sales",
   items: [
     {
@@ -247,7 +246,7 @@ const toprateslaes = {
 };
 
 
-const story = {
+export  const story = {
   title: "Top Stories",
   news: [
     {
@@ -344,7 +343,7 @@ const story = {
 };
 
 
-const footerAPI = {
+ export const footerAPI = {
   titles: [ {title: "About Nike"},{title: "Get Help"},{title: "Company"} ],
   links: [
     [
@@ -375,4 +374,3 @@ const footerAPI = {
 };
 
 
-export { heroapi, footerAPI, story, sneaker, highlight, toprateslaes, popularsales };
