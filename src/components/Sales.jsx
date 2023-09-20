@@ -1,14 +1,18 @@
 import React from 'react'
-
+import Title from './utils/Title'
+import Item from './utils/Item'
 const Sales = ({endpoint, ifExists}) => {
-    const {items} = endpoint;
+    const {items, title} = endpoint;
   return (
-    <div className="border border-solid z-20">
+    <div className="nike-container border border-solid z-20">
+      <Title title={title} />
+      <div className={`grid items-center justify-items-center gap-7 lg:gap-5 mt-7 ${ifExists ? 'grid-cols-3 xl:grid-cols-2 sm:grid-cols-1' : 'grid-cols-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1'}`}>
         {items.map((item, id) => (
-            <>
-                <img  key={id} src={item.img} alt={item.title} />            
-            </>
-        ))}
+              
+              <Item item ={item} key={id} ifExists={ifExists} />
+              
+        ))}   
+      </div>
     </div>
   )
 }
