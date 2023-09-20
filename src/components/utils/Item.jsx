@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { setAddItemToCart, selectCartItems } from '../../store/CartSlice';
+import { setAddItemToCart, selectCartItems, setOpenCart } from '../../store/CartSlice';
+import { StarIcon, ShoppingBagIcon } from "@heroicons/react/24/solid";
 
 const Item = ({ ifExists, item}) => {
   const { id, color, shadow, title, text, img, btn, rating, price} = item;
@@ -16,50 +17,11 @@ const Item = ({ ifExists, item}) => {
     
   };
 
-  return (
-    <div>
-      <img  key={id} src={img} alt={title} />
-      <button type='button' onClick={onAddToCart}>Item add</button>
-    </div>
-  )
-}
-
-export default Item
-
-
-/*
-import React from "react";
-import { useDispatch } from "react-redux";
-
-import { StarIcon, ShoppingBagIcon } from "@heroicons/react/24/solid";
-import { setAddItemToCart, setOpenCart } from "../../app/CartSlice";
-
-const Item = ({
-  ifExists,
-  id,
-  color,
-  shadow,
-  title,
-  text,
-  img,
-  btn,
-  rating,
-  price,
-}) => {
-  //   console.log(id)
-  const dispatch = useDispatch();
-
-  const onAddToCart = () => {
-    const item = { id, title, text, img, color, shadow, price };
-
-    dispatch(setAddItemToCart(item));
-  };
-
-  const onCartToggle = () => {
+  const  onCartToggle = () =>{
     dispatch(setOpenCart({
-        cartState: true
+      cartState: true
     }))
-}
+  }
 
   return (
     <>
@@ -73,7 +35,7 @@ const Item = ({
             ifExists ? "justify-items-start" : "justify-items-center"
           }`}
         >
-          <h1 className="text-slate-200 text-xl lg:text-lg md:text-base font-medium filter drop-shadow">
+          <h1 className="text-slate-200 text-xl lg:text-lg md:text-base font-medium filter drop-shadow z-20">
             {title}
           </h1>
           <p className="text-slate-200 filter drop-shadow text-base md:text-sm font-normal">
@@ -86,7 +48,7 @@ const Item = ({
             </div>
             <div className="flex items-center gap-1">
               <StarIcon className="icon-style w-5 h-5 md:w-4 md:h-4" />
-              <h1 className="md:text-sm font-normal text-slate-100">
+              <h1 className="md:text-sm font-normal text-slate-100 z-20">
                 {rating}
               </h1>
             </div>
@@ -117,7 +79,7 @@ const Item = ({
           <img
             src={img}
             alt={`img/item-img/${id}`}
-            className={`transitions-theme hover:-rotate-12 ${
+            className={`transitions-theme hover:-rotate-12 z-10 ${
               ifExists
                 ? "h-auto w-64 lg:w-56 md:w-48 -rotate-[35deg]"
                 : "h-36 w-64"
@@ -126,9 +88,8 @@ const Item = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Item;
+export default Item
 
-*/
